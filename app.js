@@ -7,6 +7,9 @@ const questions = [
   { id: "recent-learning", set: "nhe-nhang", tag: "hiểu mình", text: "Gần đây cậu mới nhận ra điều gì về chính mình?", type: "text", hint: "một câu cũng được", book: "How to Know a Person" },
   { id: "good-day", set: "nhe-nhang", tag: "một ngày tốt", text: "Một ngày bình thường thế nào thì cậu thấy mình sống đúng nhịp?", type: "multiple", hint: "chọn một hoặc nhiều", book: "The Art of Loving", options: ["Có thời gian cho mình", "Làm được việc có ý nghĩa", "Gặp người mình quý", "Được nghỉ ngơi", "Có một điều bất ngờ"] },
   { id: "free-time", set: "nhe-nhang", tag: "rảnh rỗi", text: "Nếu có một buổi rảnh hoàn toàn, cậu muốn dùng nó thế nào?", type: "multiple", hint: "chọn một hoặc nhiều", book: "How to Know a Person", options: ["Đi dạo", "Xem phim", "Nghe nhạc", "Ăn món mình thích", "Ở nhà thật yên"] },
+  { id: "today-story", set: "nhe-nhang", tag: "chuyện hôm nay", text: "Hôm nay có chuyện gì cậu muốn kể nhưng chưa ai hỏi không?", type: "text", hint: "một câu cũng được", book: "How to Know a Person" },
+  { id: "return-place", set: "nhe-nhang", tag: "địa điểm", text: "Có quán hoặc chỗ nào cậu hay muốn quay lại không?", type: "text", hint: "viết tên chỗ đó", book: "How to Know a Person" },
+  { id: "two-hours", set: "nhe-nhang", tag: "hai tiếng", text: "Nếu chỉ có hai tiếng rảnh cùng nhau, cậu muốn làm gì?", type: "multiple", hint: "chọn một hoặc nhiều", book: "How to Know a Person", options: ["Đi ăn", "Đi dạo", "Ngồi nói chuyện", "Xem một thứ gì đó", "Cứ đi rồi tính"] },
 
   { id: "color", set: "so-thich", tag: "màu sắc", text: "Thấy món đồ màu gì là cậu hay nhìn thêm một cái?", type: "multiple", hint: "chọn một hoặc nhiều", book: "How to Know a Person", options: ["Xanh lá", "Xanh dương", "Tím / hồng", "Đỏ / vàng", "Trắng / đen"] },
   { id: "food", set: "so-thich", tag: "món ăn", text: "Hôm nay được chọn món mình mê, cậu chọn gì?", type: "multiple", hint: "chọn một hoặc nhiều", book: "How to Know a Person", options: ["Mì cay", "Cơm nhà", "Bún / phở", "Đồ nướng", "Đồ ăn vặt"] },
@@ -18,7 +21,7 @@ const questions = [
   { id: "new-try", set: "so-thich", tag: "thử điều mới", text: "Nếu rủ cậu thử một điều mới, điều gì nghe có vẻ hợp?", type: "multiple", hint: "chọn một hoặc nhiều", book: "The Art of Loving", options: ["Món ăn mới", "Một nơi chưa đi", "Một bộ phim", "Một hoạt động", "Cứ để bất ngờ"] },
 
   { id: "message-rhythm", set: "nhip-rieng", tag: "liên lạc", text: "Một ngày bình thường, nhắn nhau bao nhiêu thì vừa?", type: "multiple", hint: "chọn một hoặc nhiều", book: "Attached", options: ["Lâu lâu một tin", "Sáng hoặc tối", "Vài lần trong ngày", "Có chuyện là nhắn", "Tùy hôm"] },
-  { id: "care-when-tired", set: "nhip-rieng", tag: "khi mệt", text: "Sau một ngày mệt, điều gì khiến cậu dễ chịu hơn?", type: "multiple", hint: "chọn một hoặc nhiều", book: "Hold Me Tight", options: ["Cho tớ yên một chút", "Nhắn hỏi một câu", "Gọi nói chuyện", "Gửi đồ ăn", "Ở cạnh nhưng không cần nói"] },
+  { id: "care-when-tired", set: "nhip-rieng", tag: "nạp năng lượng", text: "Sau một ngày dài, cậu thường làm gì để lấy lại năng lượng?", type: "multiple", hint: "chọn một hoặc nhiều", book: "How to Know a Person", options: ["Ngủ một giấc", "Ăn món thích", "Nghe nhạc", "Đi dạo", "Ở yên một mình"] },
   { id: "new-topic", set: "nhip-rieng", tag: "bắt chuyện", text: "Mới quen, cậu dễ nói về điều gì hơn?", type: "multiple", hint: "chọn một hoặc nhiều", book: "How to Know a Person", options: ["Món ăn", "Phim / nhạc", "Ngày hôm nay", "Điều mình nghĩ", "Chuyện linh tinh"] },
   { id: "tiny-stories", set: "nhip-rieng", tag: "liên lạc", text: "Có chuyện nhỏ vui vui, cậu thích kể lúc nào?", type: "multiple", hint: "chọn một hoặc nhiều", book: "How to Know a Person", options: ["Kể ngay lúc đó", "Để dành kể một lượt", "Khi người kia hỏi", "Đăng story trước", "Tùy chuyện"] },
   { id: "plan-style", set: "nhip-rieng", tag: "hẹn trước", text: "Rủ đi chơi, cậu thích bất ngờ hay hẹn trước?", type: "multiple", hint: "chọn một hoặc nhiều", book: "Attached", options: ["Rảnh thì rủ luôn", "Báo trước một hôm", "Hẹn trước vài ngày", "Tùy cuộc hẹn", "Để người kia chọn"] },
@@ -28,21 +31,9 @@ const questions = [
 
   { id: "care-language", set: "quan-tam", tag: "quan tâm", text: "Cậu thường nhận ra ai đó quan tâm mình qua điều gì?", type: "multiple", hint: "chọn một hoặc nhiều", book: "The Art of Loving", options: ["Nhớ điều tớ kể", "Chủ động hỏi han", "Để ý chuyện nhỏ", "Có mặt đúng lúc", "Nói thẳng ra"] },
   { id: "follow-up", set: "quan-tam", tag: "hỏi han", text: "Nếu cậu kể đang vướng chuyện, tớ nên làm gì sau đó?", type: "multiple", hint: "chọn một hoặc nhiều", book: "Nonviolent Communication", options: ["Đợi tớ kể tiếp", "Hỏi thăm sau đó", "Đưa một lời khuyên", "Chỉ cần nghe", "Làm tớ cười"] },
-  { id: "boundary", set: "quan-tam", tag: "nhẹ thôi", text: "Khi mệt, cậu muốn người kia ở gần hay cho mình khoảng riêng?", type: "multiple", hint: "chọn một hoặc nhiều", book: "Hold Me Tight", options: ["Cho tớ yên", "Nhắn một câu thôi", "Ở cạnh nhưng không cần nói", "Rủ làm việc nhẹ", "Tùy mức mệt"] },
-  { id: "ask-direct", set: "quan-tam", tag: "nói rõ", text: "Khi cần được giúp, cậu thích nói thẳng hay muốn người kia tự nhận ra?", type: "multiple", hint: "chọn một hoặc nhiều", book: "Nonviolent Communication", options: ["Nói thẳng luôn", "Gợi ý một chút", "Muốn người kia tự để ý", "Tùy chuyện", "Chưa biết"] },
-  { id: "misunderstanding", set: "quan-tam", tag: "hiểu lầm", text: "Nếu hai người hiểu lầm nhau, điều gì giúp cậu dễ mở lời lại?", type: "multiple", hint: "chọn một hoặc nhiều", book: "Nonviolent Communication", options: ["Có thời gian bình tĩnh", "Được nghe trước", "Một lời xin lỗi rõ ràng", "Nói chuyện riêng", "Một tin nhắn ngắn"] },
-  { id: "safe-honesty", set: "quan-tam", tag: "thành thật", text: "Điều gì khiến cậu thấy an toàn để nói thật?", type: "text", hint: "viết theo cách của cậu", book: "Hold Me Tight" },
-  { id: "not-helpful", set: "quan-tam", tag: "đừng làm", text: "Khi cậu đang buồn, kiểu an ủi nào thường không giúp được cậu?", type: "text", hint: "nói thật nhé", book: "Nonviolent Communication" },
-  { id: "repair", set: "quan-tam", tag: "làm lành", text: "Sau một chuyện không vui, cậu muốn hai người làm gì để gần lại?", type: "multiple", hint: "chọn một hoặc nhiều", book: "Hold Me Tight", options: ["Nói rõ chuyện đã xảy ra", "Xin lỗi và sửa một việc", "Cho nhau thời gian", "Làm một điều bình thường", "Ôm / ở cạnh nhau"] },
-
-  { id: "care-four", set: "gia-tri", tag: "điều cốt lõi", text: "Trong một mối quan hệ, điều nào quan trọng với cậu nhất?", type: "multiple", hint: "chọn một hoặc nhiều", book: "The Art of Loving", options: ["Quan tâm", "Trách nhiệm", "Tôn trọng", "Hiểu nhau", "Tự do là chính mình"] },
-  { id: "admire", set: "gia-tri", tag: "ngưỡng mộ", text: "Cậu thường ngưỡng mộ một người ở điểm nào?", type: "multiple", hint: "chọn một hoặc nhiều", book: "The Art of Loving", options: ["Sự tử tế", "Cách họ sống", "Sự can đảm", "Khả năng lắng nghe", "Cách họ giữ lời"] },
-  { id: "grow", set: "gia-tri", tag: "lớn lên", text: "Dạo này cậu đang muốn trở thành phiên bản thế nào của mình?", type: "text", hint: "một ý nhỏ cũng được", book: "The Art of Loving" },
-  { id: "protect-time", set: "gia-tri", tag: "thời gian", text: "Có điều gì cậu luôn muốn giữ lại cho riêng mình?", type: "multiple", hint: "chọn một hoặc nhiều", book: "The Art of Loving", options: ["Một khoảng yên", "Bạn bè", "Gia đình", "Sở thích", "Mục tiêu riêng"] },
-  { id: "shared-meaning", set: "gia-tri", tag: "cùng nhau", text: "Một thói quen nhỏ nào có thể khiến hai người thấy mình thuộc về cùng một câu chuyện?", type: "text", hint: "viết ý tưởng của cậu", book: "The Seven Principles for Making Marriage Work" },
-  { id: "influence", set: "gia-tri", tag: "lắng nghe", text: "Khi người kia góp ý, điều gì khiến cậu muốn lắng nghe hơn?", type: "multiple", hint: "chọn một hoặc nhiều", book: "The Seven Principles for Making Marriage Work", options: ["Nói nhẹ nhàng", "Nói đúng lúc", "Giải thích lý do", "Hỏi ý mình trước", "Không ép phải đồng ý"] },
-  { id: "ordinary-life", set: "gia-tri", tag: "đời thường", text: "Cậu nghĩ một cuộc sống tốt thường được tạo nên từ những điều gì?", type: "multiple", hint: "chọn một hoặc nhiều", book: "The Art of Loving", options: ["Những ngày yên", "Người mình quý", "Việc có ý nghĩa", "Tự do lựa chọn", "Có nơi để trở về"] },
-  { id: "future-question", set: "gia-tri", tag: "còn tò mò", text: "Có điều gì cậu vẫn muốn được hỏi, nhưng chưa ai hỏi cậu chưa?", type: "text", hint: "đến lượt cậu đặt câu hỏi", book: "How to Know a Person" },
+  { id: "boundary", set: "quan-tam", tag: "nhẹ thôi", text: "Lúc cần nghỉ, cậu thường thích ở đâu hoặc làm gì?", type: "multiple", hint: "chọn một hoặc nhiều", book: "How to Know a Person", options: ["Ở nhà", "Đi dạo", "Nghe nhạc", "Xem gì đó", "Ra ngoài ăn"] },
+  { id: "ask-direct", set: "quan-tam", tag: "lời rủ", text: "Khi rủ cậu đi đâu, cậu thích người kia nói thế nào?", type: "multiple", hint: "chọn một hoặc nhiều", book: "Nonviolent Communication", options: ["Nói thẳng địa điểm", "Đưa vài lựa chọn", "Rủ bất ngờ", "Hẹn trước", "Cứ hỏi lúc đó"] },
+  { id: "misunderstanding", set: "quan-tam", tag: "nhắn tin", text: "Nếu đang bận chưa trả lời được, cậu thường thích làm gì?", type: "multiple", hint: "chọn một hoặc nhiều", book: "Attached", options: ["Báo trước một câu", "Để lát trả lời", "Trả lời nhanh rồi làm tiếp", "Tắt thông báo", "Tùy việc"] },
 ];
 
 const state = { selected: new Set(), filter: "all", custom: [] };
@@ -75,8 +66,9 @@ function load() {
   try {
     const saved = JSON.parse(localStorage.getItem("giua-hai-mua-builder") || "null");
     if (!saved) return;
-    state.selected = new Set(saved.selected || []);
     state.custom = saved.custom || [];
+    const validIds = new Set([...questions, ...state.custom].map((q) => q.id));
+    state.selected = new Set((saved.selected || []).filter((id) => validIds.has(id)));
     if (saved.title) document.querySelector("#title-input").value = saved.title;
   } catch (_) {}
 }

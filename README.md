@@ -6,6 +6,8 @@ Ngân hàng câu hỏi được viết mới từ các ý niệm trong sách, kh
 
 Không giới hạn số câu được chọn. Người tạo bài tự chọn số lượng phù hợp với Hoài.
 
+Các câu hỏi sâu về nỗi buồn, ranh giới, sự an toàn và cách làm lành được tách khỏi bài online. Trang chỉ gợi ý chúng như những câu nên để dành cho lúc gặp trực tiếp.
+
 ## Lưu dữ liệu
 
 - Bản tạo câu hỏi tự lưu trong `localStorage` của trình duyệt.
