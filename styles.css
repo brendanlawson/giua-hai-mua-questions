@@ -58,6 +58,7 @@ h2 { font-size: clamp(38px, 5vw, 58px); margin-top: 10px; }
 .selected .choose { border-color: var(--green); color: var(--paper); background: var(--green); }
 .question-card h3 { max-width: 300px; margin-top: 24px; font-family: var(--serif); font-weight: 600; font-size: 24px; line-height: 1.1; letter-spacing: -.035em; }
 .question-card small { color: var(--muted); font-size: 12px; }
+.book-source { display: block; margin-top: 8px; color: var(--coral); font-family: var(--mono); font-size: 9px; letter-spacing: .02em; text-transform: uppercase; }
 .custom-question { display: flex; align-items: center; gap: 22px; margin-top: 20px; padding: 22px; border: 1px dashed rgba(31,38,34,.3); }
 .custom-symbol { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 50%; color: var(--coral); background: #f0d7c6; font-size: 25px; }
 .custom-copy { flex: 1; }.custom-copy h3 { margin: 5px 0; font-family: var(--serif); font-size: 22px; letter-spacing: -.03em; }.custom-copy p { color: var(--muted); font-size: 13px; }

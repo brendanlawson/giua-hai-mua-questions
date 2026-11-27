@@ -2,6 +2,10 @@
 
 Một trang tĩnh để chọn, sắp xếp và chia sẻ những câu hỏi nhẹ nhàng giữa hai người mới quen.
 
+Ngân hàng câu hỏi được viết mới từ các ý niệm trong sách, không chép câu hỏi từ Facebook hay các bài đăng trên mạng. Các nguồn cảm hứng chính gồm *How to Know a Person* (David Brooks), *Nonviolent Communication* (Marshall B. Rosenberg), *Attached* (Amir Levine & Rachel Heller), *Hold Me Tight* (Sue Johnson), *The Art of Loving* (Erich Fromm) và *The Seven Principles for Making Marriage Work* (John Gottman).
+
+Không giới hạn số câu được chọn. Người tạo bài tự chọn số lượng phù hợp với Hoài.
+
 ## Lưu dữ liệu
 
 - Bản tạo câu hỏi tự lưu trong `localStorage` của trình duyệt.
