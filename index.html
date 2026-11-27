@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f6f0e8" />
+    <title>Giữa hai mùa · tạo câu hỏi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Giữa hai mùa">
+        <span class="brand-mark">↗</span>
+        <span>giữa hai mùa</span>
+      </a>
+      <div class="topbar-meta"><span class="dot"></span> chế độ tạo câu hỏi</div>
+    </header>
+
+    <main id="top">
+      <section class="hero wrap">
+        <div class="eyebrow">một bài hỏi nhỏ, để còn nhiều chuyện nói tiếp</div>
+        <h1>Cậu muốn hỏi Hoài<br /><em>điều gì trước?</em></h1>
+        <p class="hero-copy">Chọn những câu vừa đủ nhẹ để trả lời, nhưng vẫn mở ra được một cuộc trò chuyện. Mình sẽ gom lại thành một bài riêng để cậu gửi đi.</p>
+        <div class="hero-note"><span>✦</span> Câu hỏi hiện đã chọn <strong id="selected-count">0</strong> / 12</div>
+      </section>
+
+      <section id="builder" class="builder wrap" aria-label="Trình tạo câu hỏi">
+        <aside class="sidebar">
+          <div class="sidebar-label">bộ câu hỏi</div>
+          <button class="set-button active" data-filter="all"><span>Tất cả gợi ý</span><span class="set-count" id="all-count"></span></button>
+          <button class="set-button" data-filter="nhe-nhang"><span>Bắt đầu nhẹ</span><span class="set-count">06</span></button>
+          <button class="set-button" data-filter="so-thich"><span>Sở thích hằng ngày</span><span class="set-count">06</span></button>
+          <button class="set-button" data-filter="nhip-rieng"><span>Nhịp riêng của cậu</span><span class="set-count">06</span></button>
+          <button class="set-button" data-filter="quan-tam"><span>Cách muốn được quan tâm</span><span class="set-count">06</span></button>
+          <div class="sidebar-footer">
+            <div class="mini-line"></div>
+            <p>Phần phân tích để sau.<br />Bây giờ chỉ cần chọn những câu khiến cậu tò mò.</p>
+          </div>
+        </aside>
+
+        <div class="question-area">
+          <div class="area-head">
+            <div>
+              <div class="section-kicker">gợi ý đã sắp sẵn</div>
+              <h2>Chọn câu cậu thích</h2>
+            </div>
+            <button id="clear-btn" class="text-button" type="button">bỏ chọn hết</button>
+          </div>
+
+          <div id="question-grid" class="question-grid"></div>
+
+          <div class="custom-question">
+            <div class="custom-symbol">+</div>
+            <div class="custom-copy">
+              <div class="section-kicker">câu của riêng cậu</div>
+              <h3>Thêm một câu hỏi khác</h3>
+              <p>Ngắn thôi, như cách cậu sẽ nhắn trong Messenger.</p>
+            </div>
+            <button id="add-custom-btn" class="secondary-button" type="button">thêm câu</button>
+          </div>
+
+          <div id="custom-form" class="custom-form hidden">
+            <label for="custom-text">Cậu muốn hỏi gì?</label>
+            <textarea id="custom-text" maxlength="140" rows="2" placeholder="Ví dụ: Có điều gì nhỏ xíu làm cậu vui cả ngày không?"></textarea>
+            <div class="custom-form-actions"><span id="custom-length">0 / 140</span><button id="save-custom-btn" class="primary-button" type="button">thêm vào bài</button></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="send-panel wrap">
+        <div class="send-copy">
+          <div class="section-kicker">khi đã đủ câu</div>
+          <h2>Đặt tên cho bài hỏi<br /><em>rồi gửi Hoài</em></h2>
+          <p>Hoài sẽ trả lời từng câu bằng lựa chọn ngắn, hoặc gõ thêm nếu muốn. Cậu vẫn có thể sửa lại trước khi gửi.</p>
+        </div>
+        <div class="send-card">
+          <label for="title-input">Tên bài hỏi</label>
+          <input id="title-input" type="text" maxlength="60" value="Một bài hỏi nhỏ cho Hoài" />
+          <div class="send-card-meta"><span id="send-count">0 câu đã chọn</span><span class="save-status"><span class="save-dot"></span> tự lưu trên máy</span></div>
+          <button id="preview-btn" class="primary-button wide" type="button">xem trước &amp; tạo link</button>
+          <div class="microcopy">Link được tạo ngay trên trình duyệt. Cậu có thể gửi qua Messenger.</div>
+        </div>
+      </section>
+
+      <section id="preview-section" class="preview-section wrap hidden">
+        <div class="preview-head"><div><div class="section-kicker">bản xem trước</div><h2 id="preview-title">Một bài hỏi nhỏ cho Hoài</h2></div><button id="edit-btn" class="text-button" type="button">quay lại sửa</button></div>
+        <div id="preview-list" class="preview-list"></div>
+        <div class="share-box">
+          <div><div class="section-kicker">link gửi Hoài</div><p id="share-url" class="share-url"></p></div>
+          <button id="copy-link-btn" class="secondary-button" type="button">sao chép link</button>
+        </div>
+        <div id="copy-toast" class="toast" role="status" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <footer class="footer wrap"><span>giữa hai mùa</span><span>hỏi một điều · nghe một điều</span></footer>
+    <script src="app.js"></script>
+  </body>
+</html>
